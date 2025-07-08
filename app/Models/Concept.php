@@ -13,6 +13,8 @@ class Concept extends Model
     /** @use HasFactory<\Database\Factories\ConceptFactory> */
     use HasFactory;
 
+    protected $guarded = [];
+
     // public function tags(): BelongsToMany 
     // {
     //     return $this->belongsToMany(Tag::class);

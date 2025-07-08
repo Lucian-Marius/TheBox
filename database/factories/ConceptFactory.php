@@ -18,8 +18,8 @@ class ConceptFactory extends Factory
     public function definition(): array
     {
         return [
-            'author' => fake()->name,
-            'title' => fake()->title,
+            'name' => fake()->name,
+            'title' => fake()->name,
             'description' =>fake()->text,
             'boxuser_id' => Boxuser::factory()
         ];

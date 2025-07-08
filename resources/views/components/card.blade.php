@@ -1,10 +1,12 @@
+    @auth
+        
     @props(['concept'])
     <div class="card-container">
             <div class="card-header">
                    
                 
                     <div class="card-title">
-                        <h5>Concept title</h5>
+                        <h5>{{ $concept->title }}</h5>
                     </div>
 
                      <div class="card-img">
@@ -15,8 +17,8 @@
             </div>
 
                     <div class="card-body">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, vero, mollitia reprehenderit.</p>
-                        <h4>Author</h4>
+                        <p>{{ $concept->description }}</p>
+                        <h4>by: {{ $concept->name}}</h4>
                     </div>
 
                     <div class="card-footer">
@@ -34,3 +36,4 @@
                     </div>
             </div>
 
+    @endauth

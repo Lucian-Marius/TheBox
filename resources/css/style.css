@@ -89,18 +89,20 @@ main {
 
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: start;
     align-items: center;
     font-weight: bold;
     border-bottom: var(--text-color) 1px solid;
     box-shadow: 0 0 15px var(--text-color); 
+
 }
 
 .navbar-link {
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin-left: 60px;
 }
 
 .navbar-login {
@@ -114,6 +116,7 @@ main {
     margin: 20px;
     display: flex;
     align-items: center;
+    font-weight: bold;
 }
 
 
@@ -166,6 +169,10 @@ main {
 .card-body {
     font-size: 16px;
     color: var(--text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 }
 
 .card-footer {
@@ -291,3 +298,107 @@ cursor: pointer;
     box-shadow: 0 0 5px var(--highlight-color);
 }
 
+.auth-form-container {
+    border:2px, solid;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.auth-input-field {
+    display: flex;
+    width: 400px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.auth-label{
+    font-weight: bold;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.add-form-input {
+    width: 500px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.add-form-label {
+    display: flex;
+    font-weight: bold;
+}
+
+.add-form-label-description {
+    display: flex;
+    
+}
+
+.add-form-input-description {
+    width: 500px;
+    height: 300px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+/* to add background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 16px; alson in focus mode*/
+
+.button {
+    background-color: var(--highlight-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    box-shadow: 0 0 5px var(--highlight-color);
+}
+
+.auth-h1 {
+    text-align: center;
+    margin: 5px;
+}
+
+.guest-message{
+    text-align: center;
+}
+
+.guest-auth-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Temprary. it should get a class*/
+label {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+/*----------------------------------------------------------*/

@@ -15,6 +15,8 @@ class Boxuser extends Model
     /** @use HasFactory<\Database\Factories\BoxuserFactory> */
     use HasFactory;
 
+    protected $guarded = [];
+
     public function user(): BelongsTo
         {
            return $this -> belongsTo(User::class);

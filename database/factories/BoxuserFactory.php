@@ -20,7 +20,7 @@ class BoxuserFactory extends Factory
     {
         return [
             'name' => fake()->name,
-            'logo' => fake() ->imageUrl,
+            //'logo' => fake() ->imageUrl,
             'user_id' => User::factory(),
         ];
     }
