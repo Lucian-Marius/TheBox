@@ -13,10 +13,10 @@
 
     </div>
 <div class="concept-actions">
-    <button class="button">Cancel</button>
-    <button class="button">Edit Concept</button>
     
-    <form action="" method="POST" style="display: inline">
+    <a class="button-link" style="padding: 12px" href="{{ route('concepts.edit', $concept) }}">Edit Concept</a>
+
+    <form action="/concepts/{{ $concept->id }}" method="POST" style="display: inline">
         @csrf
         @method('DELETE')
         <button type="submit" class="button">Delete Concept</button>

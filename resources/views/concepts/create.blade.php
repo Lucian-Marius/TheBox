@@ -1,7 +1,10 @@
 <x-layout>
 @auth
-    
-    <h2>Create a new concept</h2>
+
+    <section>
+        <x-heading>Create a new concept</x-heading>
+    </section>
+
         <form method="POST" action="/concepts" class="add-form-container">
         @csrf
 

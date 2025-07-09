@@ -88,15 +88,37 @@ class ConceptController extends Controller
      */
     public function edit(Concept $concept)
     {
+        if (Auth::user()->boxuser->id !== $concept->boxuser_id) 
+            abort(403, 'You are not authorized to edit this concept.');
         
+        return view('concepts.edit', [
+            'concept' => $concept,
+            'tags' => \App\Models\Tag::all(),
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateConceptRequest $request, Concept $concept)
+    public function update(Request $request, Concept $concept)
     {
-        
+         // Add the same authorization check as in edit method
+    if (Auth::user()->boxuser->id !== $concept->boxuser_id) {
+        abort(403, 'You are not authorized to update this concept.');
+    }
+    
+    // Validate and get the data
+    $attributes = $request->validate([
+        'title' => ['required', 'string', 'max:255'],
+        'description' => ['required', 'string'],
+    ]);
+
+    // Update the concept
+    $concept->update($attributes);
+
+
+    return redirect()->route('concepts.show', $concept)
+        ->with('success', 'Concept updated successfully.');     
     }
 
     /**
@@ -104,6 +126,14 @@ class ConceptController extends Controller
      */
     public function destroy(Concept $concept)
     {
-        
+        // Check if the authenticated user is the owner of the concept
+        if (Auth::user()->boxuser->id !== $concept->boxuser_id) {
+            abort(403, 'You are not authorized to delete this concept.');
+        }
+
+        // Delete the concept
+        $concept->delete();
+
+        return redirect('/')->with('success', 'Concept deleted successfully.');       
     }
 }
