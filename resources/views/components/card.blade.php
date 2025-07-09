@@ -1,6 +1,7 @@
     @auth
         
     @props(['concept'])
+    
     <div class="card-container">
             <div class="card-header">
                    
@@ -24,7 +25,9 @@
                     <div class="card-footer">
                         <div >
                             <button class="card-button">
-                            <img class="card-deco" src="{{ Vite::asset('resources/images/gear-logo.png') }}" alt="">
+                            <a href="{{ route('concepts.show', $concept) }}" class="card-link">
+                                <img class="card-deco" src="{{ Vite::asset('resources/images/gear-logo.png') }}" alt="Edit">
+                            </a>    
                             </button>
                         </div>
 

@@ -19,12 +19,14 @@ class ConceptController extends Controller
      */
     public function index()
     {
-       return view("concepts.index", [
-        'concepts' => \App\Models\Concept::all(),
-        'tags' => \App\Models\Tag::all()
-       ]);
+            // Fetch the latest concepts with their associated boxuser and tags
+            $concepts = Concept::latest()->with(['boxuser', 'tags'])->get();
+            
+            return view('concepts.index', [
+                'concepts' => $concepts,
+                'tags' => \App\Models\Tag::all(),
+            ]);
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -36,27 +38,32 @@ class ConceptController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    
-    //  public function store(Request $request)
-    // {
-        // $attributes = $request->validate([
-        //     'Author' => ['required'],
-        //     'title' => ['required'],
-        //     'description' => ['required'],
-        //     'tags' => ['nullable'],
-        // ]);
+      public function store(Request $request)
+    {
+        // Validate the request data
+        $attributes = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'title' => ['required'],
+            'description' => ['required'],
+            'tags' => ['nullable', 'string'],
+        ]);
 
+        // Ensure the user is authenticated
+        $concept = Auth::user()->boxuser->concepts()->create(Arr::except($attributes, 'tags'));
 
-        // $concept = Auth::user()->boxuser->concepts()->create(Arr::except($attributes, 'tags'));
-            
-        //     if($attributes['tags'] ?? false) {
-        //         foreach (explode(',', $attributes['tags']) as $tag) {
-        //             $concept->tag($tag);
-        //         }
-        //     }
-            
-        //      return redirect('concepts.index');
-        // }
+        // If tags are provided, process them
+        if (!empty($attributes['tags'])) {
+            $tagNames = array_map('trim', explode(',', $attributes['tags']));
+            $tagIds = [];
+            foreach ($tagNames as $tagName) {
+                $tag = \App\Models\Tag::firstOrCreate(['name' => $tagName]);
+                $tagIds[] = $tag->id;
+            }
+            $concept->tags()->sync($tagIds);
+        }
+
+        return redirect('/');
+    }
 
     
 
@@ -65,7 +72,15 @@ class ConceptController extends Controller
      */
     public function show(Concept $concept)
     {
-        //
+        // Fetch the concept with its associated boxuser and tags
+        $concept->load(['boxuser', 'tags']);
+
+        return view('concepts.show', [
+            'concept' => $concept,
+            'tags' => \App\Models\Tag::all(),
+            'title' => $concept->title,
+            'description' => $concept->description,
+        ]); 
     }
 
     /**
@@ -73,7 +88,7 @@ class ConceptController extends Controller
      */
     public function edit(Concept $concept)
     {
-        //
+        
     }
 
     /**
@@ -81,7 +96,7 @@ class ConceptController extends Controller
      */
     public function update(UpdateConceptRequest $request, Concept $concept)
     {
-        //
+        
     }
 
     /**
@@ -89,6 +104,6 @@ class ConceptController extends Controller
      */
     public function destroy(Concept $concept)
     {
-        //
+        
     }
 }

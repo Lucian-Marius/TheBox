@@ -13,25 +13,9 @@ class Concept extends Model
     /** @use HasFactory<\Database\Factories\ConceptFactory> */
     use HasFactory;
 
-    protected $guarded = [];
+    // Specify which fields are mass assignable
+    protected $fillable = ['name', 'title', 'description', 'boxuser_id'];
 
-    // public function tags(): BelongsToMany 
-    // {
-    //     return $this->belongsToMany(Tag::class);
-    // }
-    
-    // public function tag(string $name): void{
-        
-    //     $tag = Tag::firstOrCreate(['name', $name]);
-    
-    //     $this->tags()->attach($tag);
-    
-    // }
-
-    // public function boxuser(): BelongsTo
-    // {
-    //     return $this->belongsTo(Boxuser::class);
-    // }
 
     public function tag(string $name): void
     {

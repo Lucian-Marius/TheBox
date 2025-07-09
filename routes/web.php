@@ -14,32 +14,10 @@ use Illuminate\Support\Arr;
 
 Route::get('/', [ConceptController::class, 'index']);
 
-Route::get('/concepts/create', function(){
-    return view('concepts.create');
-});
-
-
-
-Route::post('/concepts', function(Request $request)   
-{
-    $attributes = $request -> validate([
-    'name' => ['required'],
-    'title' => ['required'],
-    'tag' => ['nullable'],
-    'description' => ['required'],
-    ]);
-    
-    
-    Auth::user()->boxuser->concepts()->create(Arr::except($attributes, 'tags'));
-    
-    // if($attributes['tags']) {
-    //     foreach (explode(',', $attributes['tags']) as $tag) {
-    //         $concept->tag($tag);
-    //     }
-    // }
-
-    return redirect('concepts/index');
-});
+Route::get('/concepts/create', [ConceptController::class, 'concepts']);
+Route::post('/concepts', [ConceptController::class, 'store']);
+Route::get('/concepts/{concept}', [ConceptController::class, 'show'])->name('concepts.show');
+Route::get('/concepts', [ConceptController::class, 'destroy']);
 
 Route::get('/search', SearchController::class);
 Route::get('tags/{tag:name}', TagController::class);
