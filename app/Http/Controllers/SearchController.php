@@ -13,4 +13,6 @@ class SearchController extends Controller
       
         return view('results', ['concepts'=> $concepts]);
     }
+
 }
+

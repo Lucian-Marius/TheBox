@@ -33,6 +33,11 @@ class Concept extends Model
     {
         return $this->belongsTo(Boxuser::class);
     }
+
+    public function comments(): HasMany
+    {
+        return $this -> hasMany(Comment::class);
+    }
 }
 
 

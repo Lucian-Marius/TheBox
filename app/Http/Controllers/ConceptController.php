@@ -73,7 +73,7 @@ class ConceptController extends Controller
     public function show(Concept $concept)
     {
         // Fetch the concept with its associated boxuser and tags
-        $concept->load(['boxuser', 'tags']);
+        $concept->load(['boxuser', 'tags', 'comments.user']);
 
         return view('concepts.show', [
             'concept' => $concept,
@@ -88,6 +88,7 @@ class ConceptController extends Controller
      */
     public function edit(Concept $concept)
     {
+
         if (Auth::user()->boxuser->id !== $concept->boxuser_id) 
             abort(403, 'You are not authorized to edit this concept.');
         
@@ -117,8 +118,7 @@ class ConceptController extends Controller
     $concept->update($attributes);
 
 
-    return redirect()->route('concepts.show', $concept)
-        ->with('success', 'Concept updated successfully.');     
+    return redirect()->route('concepts.show', $concept);     
     }
 
     /**
@@ -134,6 +134,6 @@ class ConceptController extends Controller
         // Delete the concept
         $concept->delete();
 
-        return redirect('/')->with('success', 'Concept deleted successfully.');       
+        return redirect('/');       
     }
 }

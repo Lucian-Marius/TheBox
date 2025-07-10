@@ -6,6 +6,7 @@ use App\Http\Controllers\ConceptController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TagController;
 use App\Models\Concept;
 use Illuminate\Support\Facades\Auth;
@@ -44,6 +45,15 @@ Route::POST('/login', [SessionController::class, 'store']);
 Route::POST('/logout', [SessionController::class, 'destroy']);
 
 
+
+
+Route::POST('/concepts/{concept}/comments', [CommentController::class, 'store'])
+                                            ->name('comments.store')
+                                            ->middleware('auth');
+
+Route::DELETE('/comments/{comment}', [CommentController::class, 'destroy'])
+                                            ->name('comments.destroy')
+                                            ->middleware('auth');
     
 
 
