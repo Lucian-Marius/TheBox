@@ -1,9 +1,8 @@
+<x-heading>Register</x-heading>
 <x-layout>
-    <h1 class="auth-h1">
-        Register
-    </h1>
-    <div class="auth-form-container">
-        <form method="POST" action="/register">
+  
+    <div>
+        <form method="POST" action="/register" class="auth-form-container">
             @csrf
             @method('POST')
             <div>
@@ -22,12 +21,25 @@
                 <label for="password_confirmation" class="auth-label">Confirm Password</label>
                 <input class="auth-input-field" id="password_confirmation" name="password_confirmation" type="password" required>
             </div>
-            <hr>
-            <label for="boxuser" class="auth-label">User Name</label>
-                <input class="auth-input-field" id="boxuser" name="boxuser" type="text" required autofocus>
-            
 
-            <button type="submit" class="button">Register</button>
+            <hr style="width: 50%; margin: 20px;">
+            
+            <div>
+                <label for="boxuser" class="auth-label">User Name</label>
+                <input class="auth-input-field" id="boxuser" name="boxuser" type="text" required autofocus>
+            </div>
+            <div>
+                <button type="submit" class="button">Register</button>
+            </div>
         </form>
     </div>
+            @if ($errors->any())
+            <div class="error-messages">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 </x-layout>

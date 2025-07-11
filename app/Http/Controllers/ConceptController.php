@@ -17,10 +17,16 @@ class ConceptController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
             // Fetch the latest concepts with their associated boxuser and tags
-            $concepts = Concept::latest()->with(['boxuser', 'tags'])->get();
+            $concepts = Concept::latest()->with(['boxuser', 'tags']);
+
+            if ($request->has('category')) {
+                $concepts = $concepts-> where('category', $request->get('category'));
+            }
+
+            $concepts = $concepts->latest()->get();
             
             return view('concepts.index', [
                 'concepts' => $concepts,
@@ -45,6 +51,7 @@ class ConceptController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'title' => ['required'],
             'description' => ['required'],
+            'category' => ['nullable', 'string'],
             'tags' => ['nullable', 'string'],
         ]);
 

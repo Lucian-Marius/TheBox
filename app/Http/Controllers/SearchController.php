@@ -7,10 +7,16 @@ use App\Models\Concept;
 
 class SearchController extends Controller
 {
-    public function __invoke() 
+    public function __invoke(Request $request) 
     {
-        $concepts = Concept::where('title', 'like', request('q'))->get();
-      
+        $query = $request->get('q');
+
+            
+        $concepts = Concept::where('title', 'like', '%' . $query . '%')
+                      ->orWhere('description', 'like', '%' . $query . '%')
+                      ->orWhere('name', 'like', '%' . $query . '%')
+                      ->orWhere('category', 'like', '%' . $query . '%')
+                      ->get();
         return view('results', ['concepts'=> $concepts]);
     }
 

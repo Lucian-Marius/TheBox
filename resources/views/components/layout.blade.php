@@ -13,7 +13,7 @@
 
 
 <body>
-    
+        
     <nav>    
         <x-navbar></x-navbar>
     </nav>
@@ -25,4 +25,6 @@
     
 
 </body>
+
+<x-footer></x-footer>
 </html>

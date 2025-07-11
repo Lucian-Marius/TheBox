@@ -1,3 +1,5 @@
+<x-heading>Welcome to The Box</x-heading>
+
 <x-layout>
     <h1 class="title">{{ $concept->title }}</h1>
 

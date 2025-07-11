@@ -14,7 +14,7 @@ class Concept extends Model
     use HasFactory;
 
     // Specify which fields are mass assignable
-    protected $fillable = ['name', 'title', 'description', 'boxuser_id'];
+    protected $fillable = ['name', 'title', 'description', 'boxuser_id', 'category'];
 
 
     public function tag(string $name): void
