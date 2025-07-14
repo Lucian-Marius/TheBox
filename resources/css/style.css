@@ -199,7 +199,7 @@ main {
 }
 
 .card-tags a:hover {
-    box-shadow: 0 0 10px var(--highlight-color);
+    box-shadow: 0 0 5px var(--highlight-color);
 }
 
 .card-tags a {
@@ -421,9 +421,6 @@ main {
     background-color: var(--secondary-color);
     color: var(--primary-color);
     font-size: 16px;
-    /* to add background-color: var(--secondary-color);
-    color: var(--primary-color);
-    font-size: 16px; also in focus mode*/
 }
 
 .add-form-input-description:focus {
@@ -617,12 +614,18 @@ main {
     color: var(--highlight-color);
 }
 
+
 .radio-option {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
-    margin-bottom: 10px;
+}
+
+.radio-option label:hover {
+    color: var(--highlight-color);
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .error-messages {
@@ -642,7 +645,14 @@ main {
     height: auto;
 }
 
-
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: 14px;
+    border-top: 1px solid var(--secondary-color);
+}
 
 /*----------------------------------------------------------*/
 /* Temprary. it should get a class*/

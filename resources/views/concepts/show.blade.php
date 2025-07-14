@@ -1,4 +1,4 @@
-<x-heading>Welcome to The Box</x-heading>
+<x-heading>Edit concept</x-heading>
 
 <x-layout>
     <h1 class="title">{{ $concept->title }}</h1>
@@ -14,20 +14,19 @@
     </div>
 
     </div>
-<div class="concept-actions">
-    
-    @if($concept->boxuser_id === Auth::id())
-    <a class="button-link" style="padding: 12px" href="{{ route('concepts.edit', $concept) }}">Edit Concept</a>
 
-    <form action="/concepts/{{ $concept->id }}" method="POST" style="display: inline">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="button">Delete Concept</button>
-    @endif
-    </form>
-</div>
-
-            <form class="comment-form" method="POST" action="{{ route('comments.store', $concept) }}">
+        @auth
+            <div class="concept-actions">
+                <a class="button-link" style="padding: 12px" href="{{ route('concepts.edit', $concept) }}">Edit Concept</a>
+                <form action="/concepts/{{ $concept->id }}" method="POST" style="display: inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="button">Delete Concept</button>
+                </form>
+            </div>
+        @endauth
+            
+        <form class="comment-form" method="POST" action="{{ route('comments.store', $concept) }}">
                 @csrf
                 <div>
                     <label for="content" class="auth-label">Add a comment</label>

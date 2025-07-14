@@ -1,4 +1,4 @@
-        <x-heading>Create a new concept</x-heading>
+        <x-heading>Create a concept</x-heading>
 
 
 <x-layout>
@@ -19,7 +19,7 @@
                     
                     <div class="radio-option">
                         <input type="radio" id="category-creative" name="category" value="Creative">
-                        <label for="category-creative">Creative</label>
+                        <label for="category-creative">Art</label>
                     </div>
                     
                     <div class="radio-option">
