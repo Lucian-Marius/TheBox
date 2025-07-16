@@ -20,10 +20,10 @@
 }
 
 body {
-    background-color: var(--primary-color);
+ 
+    min-height: 100vh;
     color: var(--text-color);
-     min-height: 100vh;
-    padding-bottom: 80px; 
+    padding-bottom: 80px;
 }
 
 main {
@@ -32,20 +32,23 @@ main {
 
 
 .navbar {
-    height: 80px;
+    height: 120px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     font-weight: bold;
     border-bottom: var(--text-color) 1px solid;
     box-shadow: 0 0 15px var(--text-color);
-    padding-right: 30px;
+    padding: 30px;
+    margin-bottom: 30px;
+    gap: 50px;
 }
 
 
 .nav-link {
     text-decoration: none;
     color: var(--text-color);
+    padding-left: 10px;
 }
 
 
@@ -72,10 +75,11 @@ main {
 }
 
 .heading-title {
-    padding-top: 10px; 
+    text-align: center;
+    padding: 10px; 
     color: var(--highlight-color);
-    margin-left: 20px;
     font-weight: bold;
+    text-shadow: var(--highlight-color-light) 0px 0px 10px;
 }
 
 .logo {
@@ -83,7 +87,6 @@ main {
     height: auto;
     filter: drop-shadow(0 0 1px var(--highlight-color));
     transition: transform 2s ease-in-out;
-    padding-bottom: 15px;
 }
 
 .logo:hover {
@@ -119,8 +122,6 @@ main {
 .navbar-link {
     display: flex;
     align-items: center;
-    margin-left: 30px;
-    margin-top: 2.5px;
 }
 
 .navbar-login {
@@ -145,6 +146,7 @@ main {
     margin: 5px;
     padding: 5px;
     border-radius: 10px;
+    background-color: var(--primary-color);
 }
 
 .card-header {
@@ -254,7 +256,7 @@ main {
 
 
 .card-deco {
-    width: 90px;
+    width: 60px;
     height: auto;
     filter: drop-shadow(0 0 0.5px var(--highlight-color));
     transition: transform 2s ease-in-out;
@@ -324,10 +326,17 @@ main {
     cursor: pointer;
     font-weight: bold;
     margin-right: 10px;
+    margin-left: 15px ;
 }
 
 .search-button:hover {
     box-shadow: 0 0 5px var(--highlight-color);
+}
+
+.search-logout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .auth-form-container {
@@ -575,6 +584,8 @@ main {
     margin: 10px;
     box-shadow: 0 0 10px var(--secondary-color);
     transition: ease-in-out 0.5s;
+    background-color: var(--primary-color);
+
 }
 
 .card-fieldset:hover {
@@ -656,6 +667,26 @@ main {
 .card-deco {
     max-width: 100%;
     height: auto;
+}
+
+.background {
+    background-image: url('/public/media/neurons-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.background::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 48, 48, 0.93);
+    z-index: -1;
 }
 
 .footer {

@@ -14,9 +14,9 @@
 </head>
 
 
-<body>
-        
-    <nav>    
+<body class="background">
+
+    <nav>
         <x-navbar></x-navbar>
     </nav>
     

@@ -3,11 +3,21 @@
 
 
 <x-layout>
+    
     @auth
+    <div class="search-logout">
         <form action="/search" class="search-form">
             <button class="search-button" type="submit">Search</button>
             <input class="search-bar" type="text" name='q' placeholder="find ideas...">
         </form>
+
+    @auth
+        <form method="POST" action="/logout" class="navbar-auth" style="display: inline;">
+            @csrf
+            <button type="submit" class="button">logout</button>
+        </form>
+    @endauth
+    </div>
 
     
         <section class="welcome-user">
@@ -19,8 +29,8 @@
     @guest
     <h1 class="guest-message">You must be logged in in order to explore our page</h1>
     <div class="guest-auth-links">
-        <div class="navbar-auth"><a class="nav-link" href="/login">login</a></div>
-        <div class="navbar-auth"><a class="nav-link" href="/register">register</a></div>
+        {{-- <div class="navbar-auth"><a class="nav-link" href="/login">login</a></div>
+        <div class="navbar-auth"><a class="nav-link" href="/register">register</a></div> --}}
     </div>
     @endguest
 

@@ -35,7 +35,7 @@
                 <div>
                     <button class="card-button">
                         <a href="{{ route('concepts.show', $concept) }}" class="card-link">
-                            <img class="card-deco" src="{{ Vite::asset('resources/images/gear-logo.png') }}" alt="Edit">
+                            <img class="card-deco" src="{{ Vite::asset('resources/images/gear-settings.png') }}" alt="Edit">
                         </a>    
                     </button>
                 </div>

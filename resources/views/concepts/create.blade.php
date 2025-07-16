@@ -79,8 +79,8 @@
 @guest
     <h1 class="guest-message">You must be logged in in order to add a concept</h1>
     <div class="guest-auth-links">
-        <div class="navbar-auth"><a class="nav-link" href="/login">login</a></div>
-        <div class="navbar-auth"><a class="nav-link" href="/register">register</a></div>
+        {{-- <div class="navbar-auth"><a class="nav-link" href="/login">login</a></div>
+        <div class="navbar-auth"><a class="nav-link" href="/register">register</a></div> --}}
     </div>
 @endguest
 
