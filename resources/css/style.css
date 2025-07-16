@@ -22,6 +22,8 @@
 body {
     background-color: var(--primary-color);
     color: var(--text-color);
+     min-height: 100vh;
+    padding-bottom: 80px; 
 }
 
 main {
@@ -69,12 +71,19 @@ main {
 
 }
 
+.heading-title {
+    padding-top: 10px; 
+    color: var(--highlight-color);
+    margin-left: 20px;
+    font-weight: bold;
+}
+
 .logo {
-    width: 130px;
+    width: 80px;
     height: auto;
     filter: drop-shadow(0 0 1px var(--highlight-color));
     transition: transform 2s ease-in-out;
-    padding: 10px;
+    padding-bottom: 15px;
 }
 
 .logo:hover {
@@ -237,9 +246,9 @@ main {
     display: flex;
     justify-content: center;    
     margin: 10px;
-    padding-top: 30px;
+    padding-top: 10px;
     border-radius: 10px;
-    gap: 90px;
+    gap: 100px;
 }
 
 
@@ -376,7 +385,11 @@ main {
     font-weight: bold;
 }
 
-
+.auth-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
 
 
 .add-form {
@@ -646,7 +659,12 @@ main {
 }
 
 .footer {
-    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
     background-color: var(--primary-color);
     color: var(--text-color);
@@ -885,6 +903,7 @@ label {
     .button-link {
         padding: 8px 15px;
         font-size: 12px;
+        margin-bottom: 10px;
     }
     
     .comment-container {

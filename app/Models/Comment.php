@@ -10,7 +10,7 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $fillable =['content', 'user_id', 'concept_id'];
+    protected $fillable = ['content', 'user_id', 'concept_id'];
 
     public function concept() :BelongsTo
     {

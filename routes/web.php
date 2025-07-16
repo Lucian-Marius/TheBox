@@ -19,9 +19,9 @@ Route::get('/concepts/create', [ConceptController::class, 'concepts']);
 
 Route::post('/concepts', [ConceptController::class, 'store']);
 
-Route::DELETE('/concepts/{concept}', [ConceptController::class, 'destroy']);
+Route::DELETE('/concepts/{concept}', [ConceptController::class, 'destroy'])->middleware('auth');
 
-Route::get('/concepts/{concept}/edit', [ConceptController::class, 'edit'])->name('concepts.edit');
+Route::get('/concepts/{concept}/edit', [ConceptController::class, 'edit'])->name('concepts.edit')->middleware('auth');
 
 Route::get('/concepts/{concept}', [ConceptController::class, 'show'])->name('concepts.show');
 

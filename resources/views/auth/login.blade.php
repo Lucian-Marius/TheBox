@@ -4,17 +4,17 @@
     </h1>
         <form method="POST" action="/login" class="auth-form-container">
             @csrf
-            <div>
+            <div class="auth-input-container">
                 <label for="name" class="auth-label">Name</label>
                 <input class="auth-input-field" id="name" name="name" type="text" required>
             </div>
-            
-            <div>
+
+            <div class="auth-input-container">
                 <label for="email" class="auth-label">Email</label>
                 <input class="auth-input-field" id="email" name="email" type="email" required>
             </div>
-            
-            <div>
+
+            <div class="auth-input-container">
                 <label for="password" class="auth-label">Password</label>
                 <input class="auth-input-field" id="password" name="password" type="password" required>
             </div>

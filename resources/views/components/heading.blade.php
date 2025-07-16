@@ -1,6 +1,9 @@
  <section>
+          
         
        <div class = "nav-deco-container"> 
+
+              <h1 class="heading-title">{{ $slot }}</h1>
 
               <div>
               <img src="{{ Vite::asset('resources/images/single-gear.png') }}" alt="Pandora Logo" class="nav-deco-invert">
@@ -13,8 +16,6 @@
               <div >
               <img src="{{ Vite::asset('resources/images/single-gear-deco.png') }}" alt="Pandora Logo" class="nav-deco">
               </div>
-
-              <h1>{{ $slot }}</h1>
 
 
               <div >
@@ -29,4 +30,6 @@
               <img src="{{ Vite::asset('resources/images/gear-logo.png') }}" alt="Pandora Logo" class="logo">
               </div>
        </div>
+
+    
 </section>
