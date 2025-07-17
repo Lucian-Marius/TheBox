@@ -45,10 +45,11 @@
         <div>
             @forelse($concept->comments->sortByDesc('created_at') as $comment)
                 <x-comment :comment="$comment" />
+            
             @empty
                 <p class="no-comments">No comments yet. Be the first to comment!</p>
             @endforelse
         </div>
     </div>
 
-</x-layout>`
+</x-layout>

@@ -22,6 +22,27 @@ Photo by <a href="https://unsplash.com/@npi?utm_content=creditCopyText&utm_mediu
 {{-- gear-settings
 <a href="https://www.flaticon.com/free-icons/gear" title="gear icons">Gear icons created by Freepik - Flaticon</a> --}}
       
-neurons-background
-Photo by <a href="https://unsplash.com/@bhautik_patel3?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Bhautik Patel</a> on <a href="https://unsplash.com/photos/a-bunch-of-lights-that-are-on-a-tree-NVprB2Xt1bA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+{{-- neurons-background
+Photo by <a href="https://unsplash.com/@bhautik_patel3?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Bhautik Patel</a> on <a href="https://unsplash.com/photos/a-bunch-of-lights-that-are-on-a-tree-NVprB2Xt1bA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> --}}
       
+{{-- tech-gear
+<a href="https://www.flaticon.com/free-icons/digital-transformation" title="digital transformation icons">Digital transformation icons created by pojok d - Flaticon</a> --}}
+{{-- 
+
+bussiness-gear
+<a href="https://www.flaticon.com/free-icons/gear" title="gear icons">Gear icons created by Freepik - Flaticon</a> --}}
+
+{{-- gear-icon
+<a href="https://www.flaticon.com/free-icons/wheel" title="wheel icons">Wheel icons created by andinur - Flaticon</a> --}}
+
+{{-- other-gear
+<a href="https://www.flaticon.com/free-icons/save-the-planet" title="save the planet icons">Save the planet icons created by Dewi Sari - Flaticon</a> --}}
+
+{{-- nature-gear
+<a href="https://www.flaticon.com/free-icons/nature" title="nature icons">Nature icons created by kmg design - Flaticon</a> --}}
+
+{{-- art-gear
+<a href="https://www.flaticon.com/free-icons/business-and-finance" title="business and finance icons">Business and finance icons created by pictranoosa - Flaticon</a> --}}
+
+{{-- art-gear-2
+<a href="https://www.flaticon.com/free-icons/art-and-design" title="art and design icons">Art and design icons created by Iconsea - Flaticon</a> --}}

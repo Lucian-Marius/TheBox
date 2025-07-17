@@ -11,12 +11,12 @@
             <input class="search-bar" type="text" name='q' placeholder="find ideas...">
         </form>
 
-    @auth
-        <form method="POST" action="/logout" class="navbar-auth" style="display: inline;">
-            @csrf
-            <button type="submit" class="button">logout</button>
-        </form>
-    @endauth
+        @auth
+            <form method="POST" action="/logout" class="navbar-auth" style="display: inline;">
+                @csrf
+                <button type="submit" class="button">logout</button>
+            </form>
+        @endauth
     </div>
 
     
@@ -40,24 +40,30 @@
     <section class="welcome">
         <h3 class="welcome-title">Browse by Category</h3>
         <div class="category-buttons">
-            <a href="/" class="button"{{ !request('category') ? ' active' : '' }}">All</a>
-            <a href="/?category=Technology" class="button{{ request('category') === 'Technology' ? ' active' : '' }}">Technology</a>
-            <a href="/?category=Creative" class="button{{ request('category') === 'Creative' ? ' active' : '' }}">Art</a>
-            <a href="/?category=Business" class="button{{ request('category') === 'Business' ? ' active' : '' }}">Business</a>
-            <a href="/?category=Science" class="button{{ request('category') === 'Science' ? ' active' : '' }}">Science</a>
-            <a href="/?category=Other" class="button{{ request('category') === 'Other' ? ' active' : '' }}">Other</a>
+            <a href="/" class="{{ !request('category') ? ' active' : '' }}"><img src="{{ Vite::asset('resources/images/other-gear.png') }}" alt="Pandora Logo" class="logo"></a>
+            <a href="/?category=Technology" class="{{ request('category') === 'Technology' ? ' active' : '' }}">            <img src="{{ Vite::asset('resources/images/tech-gear.png') }}" alt="Pandora Logo" class="logo"></a>
+
+            <a href="/?category=Creative" class="{{ request('category') === 'Creative' ? ' active' : '' }}"><img src="{{ Vite::asset('resources/images/art-gear-2.png') }}" alt="Pandora Logo" class="logo"></a>
+            
+
+            <a href="/?category=Business" class="{{ request('category') === 'Business' ? ' active' : '' }}"><img src="{{ Vite::asset('resources/images/buss-gear.png') }}" alt="Pandora Logo" class="logo"></a>
+            
+
+            <a href="/?category=Science" class="{{ request('category') === 'Science' ? ' active' : '' }}">
+                <img src="{{ Vite::asset('resources/images/nature-gear.png') }}" alt="Pandora Logo" class="logo"></a>
+            
+            <a href="/?category=Other" class="{{ request('category') === 'Other' ? ' active' : '' }}"><img src="{{ Vite::asset('resources/images/gear-settings.png') }}" alt="Pandora Logo" class="logo"></a>
+</a>
         </div>
     </section>
 
+        <h3 class="tags-title">or by tags</h3>
 
     <section class="tags-section card-tags ">
             @foreach($tags as $tag)
                     <x-tag :$tag />
             @endforeach
     </section>
-
-        
-     
 
 
         <div class="x-card-container">

@@ -29,7 +29,7 @@
                     
                     <div class="radio-option">
                         <input type="radio" id="category-science" name="category" value="Science">
-                        <label for="category-science">Science</label>
+                        <label for="category-science">Nature</label>
                     </div>
                     
                     <div class="radio-option">

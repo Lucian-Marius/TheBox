@@ -12,7 +12,7 @@
         </div>
         @auth
             @if($comment->user_id === Auth::id())
-                <form action="{{ route('comments.destroy', $comment) }}" method="POST" style="display: inline;">
+                <form action="{{ route('comments.destroy', $comment) }}" method="POST"">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class = "button">

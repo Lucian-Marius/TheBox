@@ -28,14 +28,14 @@
 
             <div class="card-body">
                 <p>{{ $concept->description }}</p>
-                <h4>by: {{ $concept->name }}</h4>
+                <h4 class="card-author">Dreamed by: {{ $concept->name }}</h4>
             </div>
 
             <div class="card-footer">
                 <div>
                     <button class="card-button">
                         <a href="{{ route('concepts.show', $concept) }}" class="card-link">
-                            <img class="card-deco" src="{{ Vite::asset('resources/images/gear-settings.png') }}" alt="Edit">
+                            <img class="card-deco" src="{{ Vite::asset('resources/images/gear-logo.png') }}" alt="Edit">
                         </a>    
                     </button>
                 </div>
