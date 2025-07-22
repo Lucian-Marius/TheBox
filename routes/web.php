@@ -54,6 +54,11 @@ Route::POST('/concepts/{concept}/comments', [CommentController::class, 'store'])
 Route::DELETE('/comments/{comment}', [CommentController::class, 'destroy'])
                                             ->name('comments.destroy')
                                             ->middleware('auth');
+
+Route::get('/resources', function() {
+    return view('resources');
+});
+
     
 
 

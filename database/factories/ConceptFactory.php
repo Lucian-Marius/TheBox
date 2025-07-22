@@ -21,7 +21,13 @@ class ConceptFactory extends Factory
             'name' => fake()->name,
             'title' => fake()->name,
             'description' =>fake()->text,
-            'boxuser_id' => Boxuser::factory()
+            'boxuser_id' => Boxuser::factory(),
+            'category' => fake()->randomElement([
+            'Technology',
+            'Creative', 
+            'Business',
+            'Science',
+            'Other'])
         ];
     }
 }

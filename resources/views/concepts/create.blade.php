@@ -1,4 +1,4 @@
-        <x-heading>Create a concept</x-heading>
+        <x-heading>Create concept</x-heading>
 
 
 <x-layout>
@@ -14,27 +14,27 @@
                     
                     <div class="radio-option">
                         <input type="radio" id="category-technology" name="category" value="Technology">
-                        <label for="category-technology">Technology</label>
+                        <label for="category-technology"><img class="card-deco" src="{{ Vite::asset('resources/images/tech-gear.png') }}"</label>
                     </div>
                     
                     <div class="radio-option">
                         <input type="radio" id="category-creative" name="category" value="Creative">
-                        <label for="category-creative">Art</label>
+                        <label for="category-creative"><img class="card-deco" src="{{ Vite::asset('resources/images/art-gear-2.png') }}"</label>
                     </div>
                     
                     <div class="radio-option">
                         <input type="radio" id="category-business" name="category" value="Business">
-                        <label for="category-business">Business</label>
+                        <label for="category-business"><img class="card-deco" src="{{ Vite::asset('resources/images/buss-gear.png') }}"</label>
                     </div>
                     
                     <div class="radio-option">
                         <input type="radio" id="category-science" name="category" value="Science">
-                        <label for="category-science">Nature</label>
+                        <label for="category-science"><img class="card-deco" src="{{ Vite::asset('resources/images/nature-gear.png') }}"</label>
                     </div>
                     
                     <div class="radio-option">
                         <input type="radio" id="category-other" name="category" value="Other">
-                        <label for="category-other">Other</label>
+                        <label for="category-other"><img class="card-deco" src="{{ Vite::asset('resources/images/other-gear.png') }}"</label>
                     </div>
                 
                 </div>
@@ -71,7 +71,15 @@
             </div>
         </div>
         </form>
-        
+        @if ($errors->any())
+            <div class="error-messages">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
             
             
 @endauth

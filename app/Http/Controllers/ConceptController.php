@@ -51,7 +51,7 @@ class ConceptController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'title' => ['required'],
             'description' => ['required'],
-            'category' => ['nullable', 'string'],
+            'category' => ['required', 'string'],
             'tags' => ['nullable', 'string'],
         ]);
 

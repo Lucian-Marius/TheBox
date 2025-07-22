@@ -38,6 +38,19 @@ class Concept extends Model
     {
         return $this -> hasMany(Comment::class);
     }
+
+    public function getCategory() 
+    {
+        $categoryButtons = [
+            'Technology' => 'resources/images/tech-gear.png',
+            'Creative' => 'resources/images/art-gear-2.png',
+            'Business' => 'resources/images/buss-gear.png',
+            'Science' => 'resources/images/nature-gear.png',
+            'Other' => 'resources/images/other-gear.png'
+        ];
+
+        return $categoryButtons[$this->category];
+    }
 }
 
 

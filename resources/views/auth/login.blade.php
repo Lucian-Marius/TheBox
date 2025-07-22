@@ -32,4 +32,5 @@
                 </ul>
             </div>
         @endif
+        
 </x-layout>

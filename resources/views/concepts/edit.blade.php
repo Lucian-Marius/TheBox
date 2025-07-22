@@ -1,6 +1,6 @@
 <x-layout>
     
-    <h2>Edit this concept</h2>
+    <h2 class="edit-title">Edit this concept</h2>
         <form method="POST" action="{{ route('concepts.update', $concept) }}" class="add-form-container">
         @csrf
         @method('PATCH')

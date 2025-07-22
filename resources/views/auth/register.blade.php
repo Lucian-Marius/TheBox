@@ -24,7 +24,7 @@
 
             <hr style="width: 50%; margin: 20px;">
             
-            <div>
+            <div class="auth-input-container">
                 <label for="boxuser" class="auth-label">User Name</label>
                 <input class="auth-input-field" id="boxuser" name="boxuser" type="text" required autofocus>
             </div>
